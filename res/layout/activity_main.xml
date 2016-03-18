@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <com.example.myshanbaynews.MyViewGroup
+            android:id="@+id/MyViewGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </com.example.myshanbaynews.MyViewGroup>
+    </ScrollView>
+
+</LinearLayout>
