@@ -6,6 +6,8 @@ import java.util.List;
 import android.R.integer;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -86,26 +88,16 @@ public class MyViewGroup extends ViewGroup{
 			int nowWidth=0;
 			for(int j=0;j<childrenList.size();j++)
 			{
-				childrenList.get(j).layout(nowWidth, nowHeight, nowWidth+childrenList.get(j).getMeasuredWidth(), nowHeight+childrenList.get(j).getMeasuredHeight());
+				childrenList.get(j).layout(nowWidth, nowHeight, 
+						nowWidth+childrenList.get(j).getMeasuredWidth(),
+						nowHeight+childrenList.get(j).getMeasuredHeight());
 				nowWidth=nowWidth+interval+childrenList.get(j).getMeasuredWidth();
 			}
 			nowHeight=nowHeight+childrenList.get(0).getMeasuredHeight()+mBetween;
 			i=i+childrenList.size();
 			
 			
-//			if(nowWidth+childWidth-minInterval<=width)
-//			{
-//				chilView.layout(nowWidth, nowHeight, nowWidth+chilView.getMeasuredWidth(), nowHeight+chilView.getMeasuredHeight());
-//				nowWidth=nowWidth+childWidth;
-//			}
-//			else
-//			{
-//				nowHeight=nowHeight+childHeight+mBetween;
-//				nowWidth=0;
-//				chilView.layout(nowWidth, nowHeight, nowWidth+chilView.getMeasuredWidth(), nowHeight+chilView.getMeasuredHeight());
-//				nowWidth=nowWidth+childWidth;
-//				
-//			}
+
 		}
 		
 		
@@ -151,5 +143,6 @@ public class MyViewGroup extends ViewGroup{
 		}
 	
 	}
+	
 
 }

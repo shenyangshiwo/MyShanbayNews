@@ -9,11 +9,14 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ScrollView;
 
 public class MainActivity extends Activity {
 
 	private MyViewGroup myViewGroup1;
-	
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +29,7 @@ public class MainActivity extends Activity {
 			{
 				MyTextView myTextView=new MyTextView(this);
 	        	myTextView.setText(myWords[i]);
+	        	myTextView.setTextSize(20);
 	        	myViewGroup1.addView(myTextView);
 			}
 		} catch (IOException e) {

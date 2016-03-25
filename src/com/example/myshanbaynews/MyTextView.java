@@ -8,14 +8,16 @@ import android.widget.TextView;
 
 public class MyTextView extends TextView {
 
-
+	private boolean isHighlight;
 	
 	public MyTextView(Context context) {
 		super(context);
+		isHighlight=false;
 		// TODO Auto-generated constructor stub
 	}
 	public MyTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		isHighlight=false;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -24,7 +26,18 @@ public class MyTextView extends TextView {
 		// TODO Auto-generated method stub
 		if(event.getAction()==MotionEvent.ACTION_DOWN)
 		{
-			setBackgroundColor(Color.rgb(0x00, 0x99, 0xcc));
+			if(isHighlight)
+			{
+				
+				setBackgroundResource(0);
+				
+			}
+			else {
+				setBackgroundColor(Color.rgb(0x00, 0x99, 0xcc));
+			}
+			isHighlight=!isHighlight;
+			
+			
 		}
 		
 		return true;
